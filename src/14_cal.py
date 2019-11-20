@@ -22,3 +22,21 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+today = datetime.today()
+date = input("Enter a date MM,YYYY: ").split(",")
+print(date)
+if(date == ['']):
+    print(calendar.TextCalendar(firstweekday=6).formatmonth(
+        today.year, today.month, w=0, l=0))
+elif(len(date) <= 1):
+    print(calendar.TextCalendar(firstweekday=6).formatmonth(
+        today.year, int(date[0]), w=0, l=0))
+elif(len(date) == 2):
+    print(calendar.TextCalendar(firstweekday=6).formatmonth(
+        int(date[1]), int(date[0]), w=0, l=0))
+else:
+    print("Please use format: MM,YYYY")
+# if(date == "" or date == " "):
+# print("Hello")
